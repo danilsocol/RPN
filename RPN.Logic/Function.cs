@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPN
 {
-    class Function
+    public class Function
     {
         public static double Calculate(string expressionString)  //string expression = "(1/2+0.5)+2*(4-1/2)";
         {
