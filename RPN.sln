@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPN", "RPN\RPN.csproj", "{E91B8AAB-2E5E-4923-A351-A782DA9833BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPN", "RPN\RPN.csproj", "{E91B8AAB-2E5E-4923-A351-A782DA9833BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPN.Logic", "RPN.Logic\RPN.Logic.csproj", "{FA016C4F-E430-4C95-8C1E-E15C9EF58F29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPN.Tests", "RPN.Tets\RPN.Tests.csproj", "{6E29B43C-458A-403F-9317-BA06420174E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{E91B8AAB-2E5E-4923-A351-A782DA9833BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E91B8AAB-2E5E-4923-A351-A782DA9833BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E91B8AAB-2E5E-4923-A351-A782DA9833BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA016C4F-E430-4C95-8C1E-E15C9EF58F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA016C4F-E430-4C95-8C1E-E15C9EF58F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA016C4F-E430-4C95-8C1E-E15C9EF58F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA016C4F-E430-4C95-8C1E-E15C9EF58F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E29B43C-458A-403F-9317-BA06420174E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E29B43C-458A-403F-9317-BA06420174E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E29B43C-458A-403F-9317-BA06420174E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E29B43C-458A-403F-9317-BA06420174E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
