@@ -7,7 +7,8 @@ namespace RPN
         static void Main(string[] args)//(1/2+0.5)+2*((4-1)/3)
         {
             //string expression = "(1/2+0.5)+2*(4-1/2)";
-            CreateRPN.Parse("(1/2+0.5)+2*((4-1)/3)");
+            double result = Function.Calculate("(1/2+0,5)+2*((4-1)/3)");
+            Console.WriteLine(result);
         }
     }
 }

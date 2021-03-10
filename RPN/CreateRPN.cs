@@ -8,11 +8,12 @@ namespace RPN
 {
     class CreateRPN
     {
-        public static void Parse(string expressionString)  //string expression = "(1/2+0.5)+2*(4-1/2)";
+        public static List<string> Parse(string expressionString)  //string expression = "(1/2+0.5)+2*(4-1/2)";
         {
             List<string> expression = SplitExpression(expressionString);
             List<string> rpn = new List<string>();
             ToRPN(expression, rpn,0);
+            return rpn;
         }
 
         static List<string> SplitExpression(string expressionString)
@@ -34,7 +35,7 @@ namespace RPN
                     expression.Add(Convert.ToString(expressionString[i]));
                     i++;
                 }
-                else if (!(expressionString[i] == '(') && !(expressionString[i] == ')')&& !(expressionString[i] == '.'))
+                else if (!(expressionString[i] == '(') && !(expressionString[i] == ')')&& !(expressionString[i] == ','))
                 {
                     i = ReadOperation(expressionString, expression, i);
                 }
@@ -47,7 +48,7 @@ namespace RPN
         {
             string num = "";
 
-            while(i< expressionString.Length && (char.IsDigit(expressionString[i])|| expressionString[i]== '.'))
+            while(i< expressionString.Length && (char.IsDigit(expressionString[i])|| expressionString[i]== ','))
             {
                 num += expressionString[i];
                 i++;
@@ -60,7 +61,7 @@ namespace RPN
         {
             string operation = "";
 
-            while (i < expressionString.Length && !(char.IsDigit(expressionString[i])) && !(expressionString[i] == '(') && !(expressionString[i] == ')') && !(expressionString[i] == '.'))
+            while (i < expressionString.Length && !(char.IsDigit(expressionString[i])) && !(expressionString[i] == '(') && !(expressionString[i] == ')') && !(expressionString[i] == ','))
             {
                 operation += expressionString[i];
                 i++;
