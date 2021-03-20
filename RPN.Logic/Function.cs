@@ -6,9 +6,8 @@ namespace RPN
 {
     public class Function
     {
-        public static double Calculate(string expressionString)  //string expression = "(1/2+0.5)+2*(4-1/2)";
+        public static double Calculate(List<string> rpn)  //string expression = "(1/2+0.5)+2*(4-1/2)";
         {
-            List<string> rpn = CreateRPN.Parse(expressionString);
             return ChooseOperation(rpn);
         }
 

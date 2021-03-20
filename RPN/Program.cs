@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RPN
 {
@@ -10,22 +11,24 @@ namespace RPN
 
             string expression = "(1/2+0,5)+2*((4-1)/3)+x";
 
+            List<string> newExsaple = (CreateRPN.Parse(expression));
+
             for (int i = minRange; i <= maxRange; i = i + step)
             {
-               string newExsample = expression.Replace("x", $"{i}");
-                Console.WriteLine(Function.Calculate(newExsample));
+                List<string> rpn = new List<string>();
+                rpn.AddRange(newExsaple.ToArray());
+
+                for (int j = 0; j < newExsaple.Count; j++)
+                {
+                    if(newExsaple[j]=="x")
+                        rpn[j] = $"{i}";
+
+                }
+                Console.WriteLine(Function.Calculate(rpn));
             }
+
+
         }
 
-        //static void newMain(int minRange,int maxRange,int step)
-        //{
-        //    string exsapmle = "(1/2+0,5)+2*((4-1)/3)+x";
-
-        //    for (int i = minRange; i <= maxRange; i = i + step)
-        //    {
-        //        string newExsample = exsapmle.Replace("x", $"{i}");
-        //        Console.WriteLine(Function.Calculate(newExsample));
-        //    }
-        //}
     }
 }

@@ -8,12 +8,21 @@ namespace RPN
     {
         public static void NewMain(string expression, int minRange, int maxRange, int step)
         {
-           
+            List<string> newExsaple = (CreateRPN.Parse(expression));
 
             for (int i = minRange; i <= maxRange; i = i + step)
             {
-                string newExsample = expression.Replace("x", $"{i}");
-                Console.WriteLine(Function.Calculate(newExsample));
+                List<string> rpn = new List<string>();
+                rpn.AddRange(newExsaple.ToArray());
+
+
+                for (int j = 0; j < newExsaple.Count; j++)
+                {
+                    if (newExsaple[j] == "x")
+                        rpn[j] = $"{i}";
+
+                }
+                Console.WriteLine(Function.Calculate(rpn));
             }
         }
     }
