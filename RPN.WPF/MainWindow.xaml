@@ -1,0 +1,83 @@
+﻿<Window x:Class="RPN.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPN.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <StackPanel>
+
+        <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="Введите пример:">
+        </TextBlock>
+
+        <TextBox Name="tbExpression"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="(1/2+0,5)+2*((4-1)/3)">
+        </TextBox>
+
+        <DockPanel>
+            
+            <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="Диапозон  ">
+            </TextBlock>
+
+            <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="от  ">
+            </TextBlock>
+
+            <TextBox Name="tbMinRange"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="1  ">
+            </TextBox>
+            
+            <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="до  ">
+            </TextBlock>
+
+            <TextBox Name="tbMaxRange"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="10  ">
+            </TextBox>
+            
+            <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="шаг  ">
+            </TextBlock>
+
+            <TextBox Name="tbStep"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="1  ">
+            </TextBox>
+        </DockPanel>
+
+        <Button Name="btCalculate" 
+                    FontSize="17" Background="Red" Height="24" 
+                    Click="btnCalculate_Click">
+            Вычеслить
+        </Button>
+
+        <DockPanel Name="dpResult"
+            Margin="20" 
+                   Visibility="Visible">
+
+            <TextBlock Background="Gray"
+            FontSize="20" Height="33" Width="106" HorizontalAlignment="Left" >
+                <Run Text="Результат:"/>
+            </TextBlock>
+
+            <TextBlock FontSize="20" Height="33" 
+                       VerticalAlignment="Top" Background="Gray">
+                Вывод
+            </TextBlock>
+
+        </DockPanel>
+
+
+    </StackPanel>
+</Window>

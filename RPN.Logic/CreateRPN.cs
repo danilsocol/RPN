@@ -8,6 +8,8 @@ namespace RPN
 {
     public class CreateRPN
     {
+       
+
         public static List<string> Parse(string expressionString)  //string expression = "(1/2+0.5)+2*(4-1/2)";
         {
             List<string> expression = SplitExpression(expressionString);
