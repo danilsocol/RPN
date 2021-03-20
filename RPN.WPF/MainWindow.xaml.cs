@@ -24,6 +24,8 @@ namespace RPN.WPF
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
+            Interface.NewMain(Convert.ToString(tbExpression), Convert.ToInt32(tbMinRange), Convert.ToInt32(tbMaxRange), Convert.ToInt32(tbStep));
+
             dpResult.Visibility = Visibility.Visible;
         }
     }

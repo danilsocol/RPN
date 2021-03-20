@@ -8,32 +8,63 @@
         Title="MainWindow" Height="450" Width="400">
     <StackPanel>
 
-        <DockPanel Name="spMenu">
+        <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="Введите пример:">
+        </TextBlock>
+
+        <TextBox Name="tbExpression"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="(1/2+0,5)+2*((4-1)/3)">
+        </TextBox>
+
+        <DockPanel>
+            
             <TextBlock 
-            Background="Gray"
-            FontSize="50" Height="56" Width="98" VerticalAlignment="Top"
-            ><Run Text="ОПЗ"/>
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="Диапозон  ">
             </TextBlock>
 
-            <StackPanel Height="58" VerticalAlignment="Top">
+            <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="от  ">
+            </TextBlock>
 
-                <TextBox Name="tbExpression"
-                FontSize="25" VerticalAlignment="Top" Background="MintCream"
-               Text="(1/2+0,5)+2*((4-1)/3)">
-                </TextBox>
+            <TextBox Name="tbMinRange"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="1  ">
+            </TextBox>
+            
+            <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="до  ">
+            </TextBlock>
 
-                <Button Name="btCalculate" 
+            <TextBox Name="tbMaxRange"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="10  ">
+            </TextBox>
+            
+            <TextBlock 
+                FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
+               Text="шаг  ">
+            </TextBlock>
+
+            <TextBox Name="tbStep"
+                FontSize="20" Height ="33" Background="MintCream"
+               Text="1  ">
+            </TextBox>
+        </DockPanel>
+
+        <Button Name="btCalculate" 
                     FontSize="17" Background="Red" Height="24" 
                     Click="btnCalculate_Click">
-                    Вычеслить
-                </Button>
-
-            </StackPanel>
-        </DockPanel>
+            Вычеслить
+        </Button>
 
         <DockPanel Name="dpResult"
             Margin="20" 
-                   Visibility="Hidden">
+                   Visibility="Visible">
 
             <TextBlock Background="Gray"
             FontSize="20" Height="33" Width="106" HorizontalAlignment="Left" >
