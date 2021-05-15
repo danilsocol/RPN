@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RPN.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
-    <Grid ShowGridLines="True">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -18,19 +18,18 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.ColumnSpan="3" Height="115" VerticalAlignment="Top" >
+        <StackPanel Grid.ColumnSpan="3" VerticalAlignment="Center" >
             <TextBlock 
                 FontSize="20" Height="25" VerticalAlignment="Top" Background="MintCream"
                Text="Введите пример:">
             </TextBlock>
 
-            <TextBox Name="tbExpression"
+            <TextBox x:Name="tbExpression"
                 FontSize="20" Height ="33" Background="MintCream"
-               Text="(1/2+0,5)+2*((4-1)/3)">
+               Text="(1/2+0,5)+2*((4-1)/x)">
             </TextBox>
 
             <DockPanel>
-
                 <TextBlock 
                 FontSize="20" Height="33" Background="MintCream"
                Text="Диапозон  "/>
@@ -63,20 +62,25 @@
                 </TextBox>
             </DockPanel>
 
-            <Button Name="btCalculate" 
+            <Button x:Name="btCalculate" 
                     FontSize="17" Background="Red" Height="24" 
-                    Click="btnCalculate_Click">
-                Вычеслить
-            </Button>
+                    Click="btnCalculate_Click" Content="Вычеслить"/>
+
+            <TextBlock Visibility="Hidden" Margin="10" x:Name="tbRes" Text="" Height="25"></TextBlock>
+
+
         </StackPanel>
 
-        <DataGrid x:Name="dgTab" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Loaded="dgTab_Loaded" AutoGenerateColumns="False">
+        <DataGrid x:Name="dgTab" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" AutoGenerateColumns="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path= Range}" Header="Range" Width="50"/>
-                <DataGridTextColumn Binding="{Binding Path= Function}" Header="Function" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Path= Result}" Header="Result" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Path =step}" x:Name="dgtcRange" Header="Range" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Path =RPN}" x:Name="dgtcFunction" Header="Function" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path =res}" x:Name="dgtcResult" Header="Result" Width="50"/>
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </Window>
+
+<!--Binding="{Binding Path= Range}"
+Binding="{Binding Path= Function}"
+Binding="{Binding Path= Result}"--> 

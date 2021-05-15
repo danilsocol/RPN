@@ -15,11 +15,11 @@ namespace RPN.Tets
             return (CreateRPN.Parse(expression)).Count;
         }
 
-        [TestCase("(1/2+0,5)+2*((4-1)/3)", ExpectedResult = 3)]
+        //[TestCase("(1/2+0,5)+2*((4-1)/3)", ExpectedResult = 3)]
 
-        public double Function_Test(string expression)
-        {
-            return Function.Calculate(expression);
-        }
+        //public double Function_Test(string expression)
+        //{
+        //    return Function.Calculate(expression);
+        //}
     }
 }
