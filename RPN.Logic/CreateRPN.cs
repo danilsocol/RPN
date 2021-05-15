@@ -8,8 +8,6 @@ namespace RPN
 {
     public class CreateRPN
     {
-       
-
         public static List<string> Parse(string expressionString)  //string expression = "(1/2+0.5)+2*(4-1/2)";
         {
             List<string> expression = SplitExpression(expressionString);
@@ -24,7 +22,7 @@ namespace RPN
 
             for(int i = 0; i<expressionString.Length;)
             {
-                if (char.IsDigit(expressionString[i]))
+                if (char.IsDigit(expressionString[i]) || expressionString[i]=='x')
                 {
                     i = ReadNumber(expressionString, expression, i);
                 }
@@ -50,7 +48,7 @@ namespace RPN
         {
             string num = "";
 
-            while(i< expressionString.Length && (char.IsDigit(expressionString[i])|| expressionString[i]== ','))
+            while(i< expressionString.Length && (char.IsDigit(expressionString[i])|| expressionString[i]== ','|| expressionString[i] == 'x'))
             {
                 num += expressionString[i];
                 i++;
@@ -63,7 +61,7 @@ namespace RPN
         {
             string operation = "";
 
-            while (i < expressionString.Length && !(char.IsDigit(expressionString[i])) && !(expressionString[i] == '(') && !(expressionString[i] == ')') && !(expressionString[i] == ','))
+            while (i < expressionString.Length && !(char.IsDigit(expressionString[i])) && !(expressionString[i] == '(') && !(expressionString[i] == ')') && !(expressionString[i] == ',') && !(expressionString[i] == 'x'))
             {
                 operation += expressionString[i];
                 i++;

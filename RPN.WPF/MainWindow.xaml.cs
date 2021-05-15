@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,16 +18,23 @@ namespace RPN.WPF
 {
     public partial class MainWindow : Window
     {
+        private BindingList<Model> tabs;
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        private void dgTab_Loaded(object sender, RoutedEventArgs e)
         {
-            Interface.NewMain(Convert.ToString(tbExpression), Convert.ToInt32(tbMinRange), Convert.ToInt32(tbMaxRange), Convert.ToInt32(tbStep));
+            tabs = new BindingList<Model>()
+            {
+                new Model(){Range = 1,Function = "1+x", Result = "2"},
+                new Model(){Range = 2,Function = "1+x", Result = "3"}
+            };
 
-            dpResult.Visibility = Visibility.Visible;
+            dgTab.ItemsSource = tabs;
         }
+
     }
 }
