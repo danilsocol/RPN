@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using RPN.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -18,23 +20,53 @@ namespace RPN.WPF
 {
     public partial class MainWindow : Window
     {
-        private BindingList<Model> tabs;
-
+        List<RowInTabl> Rows = new List<RowInTabl>();
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void dgTab_Loaded(object sender, RoutedEventArgs e)
-        {
-            tabs = new BindingList<Model>()
-            {
-                new Model(){Range = 1,Function = "1+x", Result = "2"},
-                new Model(){Range = 2,Function = "1+x", Result = "3"}
-            };
 
-            dgTab.ItemsSource = tabs;
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            int minRange = Convert.ToInt32(tbMinRange.Text);
+            int maxRange = Convert.ToInt32(tbMaxRange.Text);
+            int step = Convert.ToInt32(tbStep.Text);
+
+            string expression = Convert.ToString(tbExpression.Text);
+
+            List<string> newExsaple = (CreateRPN.Parse(expression));
+            List<string> RPN = new List<string>();
+
+            string rpnStr = "";
+            for (int i = minRange; i <= maxRange; i+= step)
+            {
+                RPN = newExsaple.GetRange(0, newExsaple.Count);
+
+                for (int j = 0; j < RPN.Count; j++)
+                {
+                    if (newExsaple[j] == "x")
+                        RPN[j] = $"{i}";
+                }
+
+                rpnStr = RPN[0];
+                for (int k = 1; k < RPN.Count; k++)
+                {
+                    rpnStr += $",{RPN[k]}";
+                }
+
+                Rows.Add(new RowInTabl(){RPN = rpnStr, step= i,res= Function.Calculate(RPN) });
+            }
+
+           dgTab.ItemsSource = Rows;
+           btGoGrap.Visibility = Visibility.Visible;
         }
 
+        private void btGoGrap_Click(object sender, RoutedEventArgs e)
+        {
+            DrawerGrap drawerGrap = new DrawerGrap();
+            drawerGrap.Show();
+            Close();
+        }
     }
 }
