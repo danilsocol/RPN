@@ -25,11 +25,5 @@ namespace RPN.Logic
             get { return _res; }
             set { _res = value; } 
         }
-        //public RowInTabl(string _RPN, int _step, double _res)
-        //{
-        //    RPN = _RPN;
-        //    step = _step;
-        //    res = _res;
-        //}
     }
 }
