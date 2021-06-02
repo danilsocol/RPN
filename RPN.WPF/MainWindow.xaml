@@ -66,7 +66,10 @@
                     FontSize="17" Background="Red" Height="24" 
                     Click="btnCalculate_Click" Content="Вычеслить"/>
 
-            <TextBlock Visibility="Hidden" Margin="10" x:Name="tbRes" Text="" Height="25"></TextBlock>
+            <Button x:Name="btGoGrap"  Visibility="Hidden"
+                    FontSize="17" Background="LightBlue" Height="24" 
+                    Click="btGoGrap_Click" Content="График"/>
+
 
 
         </StackPanel>

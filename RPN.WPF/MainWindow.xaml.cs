@@ -59,8 +59,14 @@ namespace RPN.WPF
             }
 
            dgTab.ItemsSource = Rows;
+           btGoGrap.Visibility = Visibility.Visible;
         }
 
-        
+        private void btGoGrap_Click(object sender, RoutedEventArgs e)
+        {
+            DrawerGrap drawerGrap = new DrawerGrap();
+            drawerGrap.Show();
+            Close();
+        }
     }
 }
