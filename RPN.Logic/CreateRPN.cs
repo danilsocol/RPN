@@ -16,7 +16,7 @@ namespace RPN
             return rpn;
         }
 
-        static List<string> SplitExpression(string expressionString)
+        private static List<string> SplitExpression(string expressionString)
         {
             List<string> expression = new List<string>();
 
@@ -44,7 +44,7 @@ namespace RPN
             return expression;
         }
 
-        static int ReadNumber(string expressionString, List<string> expression, int i)
+        private static int ReadNumber(string expressionString, List<string> expression, int i)
         {
             string num = "";
 
@@ -57,7 +57,7 @@ namespace RPN
             return i;
         }
 
-        static int ReadOperation(string expressionString, List<string> expression, int i)
+        private static int ReadOperation(string expressionString, List<string> expression, int i)
         {
             string operation = "";
 
@@ -80,7 +80,7 @@ namespace RPN
             return i;
         }
 
-        static void ToRPN(List<string> expression, List<string> rpn, int i)
+        private static void ToRPN(List<string> expression, List<string> rpn, int i)
         {
             List<string> LostOperation = new List<string>();
 
@@ -106,7 +106,7 @@ namespace RPN
                 }
             }
         }
-        static void ParsePlusOrMinusOperation(List<string> expression, List<string> rpn, List<string> LostOperation, int i)
+        private static void ParsePlusOrMinusOperation(List<string> expression, List<string> rpn, List<string> LostOperation, int i)
         {
             if (expression[i + 1] != ")" || expression[i + 1] != "(")
                 rpn.Add(expression[i + 1]);
@@ -119,7 +119,7 @@ namespace RPN
                 rpn.Add(expression[i]);
         }
 
-        static int ParseMultiplyAndDivideOperation(List<string> expression, List<string> rpn, List<string> LostOperation, int i)
+        private static int ParseMultiplyAndDivideOperation(List<string> expression, List<string> rpn, List<string> LostOperation, int i)
         {
             int j = i;
 
@@ -143,7 +143,7 @@ namespace RPN
             return i;
         }
 
-        static int ParseExpressionInBrackets(List<string> expression, List<string> partExpressionInBrackets, List<string> partRPNInBreckets, int i)
+        private static int ParseExpressionInBrackets(List<string> expression, List<string> partExpressionInBrackets, List<string> partRPNInBreckets, int i)
         {
             int closeBreckets = 0;
             int openBreckets = 1;

@@ -7,7 +7,9 @@ namespace RPN
     {
         static void Main(string[] args)//(1/2+0.5)+2*((4-1)/3)
         {
-            int minRange = 1,maxRange = 10, step = 1;
+            int minRange = DrawerTableConsole.ReadData("Минимальная");
+            int maxRange = DrawerTableConsole.ReadData("Максимальная");
+            int step = DrawerTableConsole.ReadData("Шаг");
 
             string expression = "(1/2+0,5)+2*((4-1)/x)";
 
@@ -29,8 +31,6 @@ namespace RPN
                 strTable += $" | {Function.Calculate(rpn)}";
                 DrawerTableConsole.DrawerTable(strTable);
             }
-
-
         }
 
     }

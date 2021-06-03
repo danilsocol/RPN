@@ -12,9 +12,6 @@ using System.Windows.Shapes;
 
 namespace RPN.WPF
 {
-    /// <summary>
-    /// Логика взаимодействия для DrawerGrap.xaml
-    /// </summary>
     public partial class DrawerGrap : Window
     {
         public DrawerGrap()

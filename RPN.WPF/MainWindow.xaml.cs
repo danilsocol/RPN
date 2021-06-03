@@ -25,8 +25,6 @@ namespace RPN.WPF
         {
             InitializeComponent();
         }
-
-
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
             int minRange = Convert.ToInt32(tbMinRange.Text);

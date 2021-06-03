@@ -11,5 +11,11 @@ namespace RPN
             Console.WriteLine(strTable);
         }
 
+        public static int ReadData(string Text)
+        {
+            Console.WriteLine(Text);
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
     }
 }

@@ -11,7 +11,7 @@ namespace RPN
             return ChooseOperation(rpn);
         }
 
-        static double ChooseOperation(List<string> rpn)
+        private static double ChooseOperation(List<string> rpn)
         {
 
             for (int i =0; i < rpn.Count; i++)
@@ -25,7 +25,7 @@ namespace RPN
             return Convert.ToDouble(rpn[0]);
         }
 
-        static int Summation(List<string> rpn,int i)
+        private static int Summation(List<string> rpn,int i)
         {
             double result = Convert.ToDouble(rpn[i - 2]) + Convert.ToDouble(rpn[i - 1]);
             rpn.RemoveAt(i);
@@ -35,7 +35,7 @@ namespace RPN
             rpn.Insert(i, Convert.ToString(result));
             return i ;
         }
-        static int Subtraction(List<string> rpn, int i)
+        private static int Subtraction(List<string> rpn, int i)
         {
             double result = Convert.ToDouble(rpn[i - 2]) - Convert.ToDouble(rpn[i - 1]);
             rpn.RemoveAt(i);
@@ -45,7 +45,7 @@ namespace RPN
             rpn.Insert(i, Convert.ToString(result));
             return i;
         }
-        static int Division(List<string> rpn, int i)
+        private static int Division(List<string> rpn, int i)
         {
             double result = Convert.ToDouble(rpn[i - 2]) / Convert.ToDouble(rpn[i - 1]);
             rpn.RemoveAt(i);
@@ -55,7 +55,7 @@ namespace RPN
             rpn.Insert(i, Convert.ToString(result));
             return i;
         }
-        static int Multiplication(List<string> rpn, int i)
+        private static int Multiplication(List<string> rpn, int i)
         {
             double result = Convert.ToDouble(rpn[i - 2]) * Convert.ToDouble(rpn[i - 1]);
             rpn.RemoveAt(i);
