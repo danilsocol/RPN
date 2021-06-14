@@ -20,13 +20,14 @@ namespace RPN.WPF
 {
     public partial class MainWindow : Window
     {
-        List<RowInTabl> Rows = new List<RowInTabl>();
+        public static List<RowInTabl> Rows = new List<RowInTabl>();
         public MainWindow()
         {
             InitializeComponent();
         }
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
+            Rows = new List<RowInTabl>();
             int minRange = Convert.ToInt32(tbMinRange.Text);
             int maxRange = Convert.ToInt32(tbMaxRange.Text);
             int step = Convert.ToInt32(tbStep.Text);

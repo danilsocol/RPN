@@ -6,13 +6,18 @@
         xmlns:local="clr-namespace:RPN.WPF"
         mc:Ignorable="d"
         Title="DrawerGrap" Height="500" Width="500" >
-    <StackPanel>
-        <Button x:Name="btGoCalc"  
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="btGoCalc" 
                     FontSize="17" Background="LightBlue" Height="24" 
                     Click="btGoCalc_Click" Content="Калькулятор"/>
 
-        <Canvas x:Name="canvas" Height="Auto" Width="Auto"  SizeChanged="canvas_SizeChanged">
+        <Canvas x:Name="canvas" SizeChanged="canvas_SizeChanged" Grid.Row="2" >
 
         </Canvas>
-    </StackPanel>
+
+    </Grid>
 </Window>

@@ -58,6 +58,17 @@ namespace RPN.WPF
             horArr.Points.Add(new Point(Convert.ToInt32(canvas.ActualWidth) - 5, Convert.ToInt32(canvas.ActualHeight) / 2 + 5));
             horArr.Stroke = Brushes.Black;
             canvas.Children.Add(horArr);
+
+            Polyline Grap = new Polyline();
+            Grap.Points = new PointCollection();
+            for (int i = 0; i < MainWindow.Rows.Count; i++)
+            {
+                Grap.Points.Add(new Point(MainWindow.Rows[i].step * 15 + Convert.ToInt32(canvas.ActualWidth) / 2,
+                   Convert.ToInt32(canvas.ActualHeight) / 2 - Convert.ToInt32(MainWindow.Rows[i].res) * 15));
+            }
+            Grap.Stroke = Brushes.Red;
+            canvas.Children.Add(Grap);
+
         }
         private void btGoCalc_Click(object sender, RoutedEventArgs e)
         {
@@ -65,5 +76,6 @@ namespace RPN.WPF
             mainWindow.Show();
             Close();
         }
+
     }
 }
